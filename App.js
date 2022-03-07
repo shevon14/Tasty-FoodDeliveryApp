@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StatusBar } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 import { COLORS, SIZES } from './src/constants/theme';
+import Router from './src/router/router';
 
 const slides = [
   {
@@ -25,7 +26,10 @@ const slides = [
 ]
 
 export default function App() {
-  const [showHomePage, setShowHomePage] = useState(false);
+  const [showHomePage, setShowHomePage] = useState(true);
+
+  StatusBar.setBarStyle('light-content', true);
+  StatusBar.setBackgroundColor(COLORS.primary);
 
   const buttonLabel = (label) => {
     return(
@@ -96,13 +100,6 @@ export default function App() {
   }
 
   return(
-    <View style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}
-    >
-      <Text>Home Screen</Text>
-    </View>
+    <Router />
   )
 }
