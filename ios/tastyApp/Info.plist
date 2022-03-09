@@ -6,7 +6,7 @@
 	<array>
 		<string>FontAwesome.ttf</string>
 		<string>Ionicons.ttf</string>
-		<string>MeterialCommunityIcons.ttf</string>
+		<string>MaterialCommunityIcons.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

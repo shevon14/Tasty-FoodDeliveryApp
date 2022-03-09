@@ -1,9 +1,17 @@
+import React from 'react';
 import SignInScreen from '../screens/signIn';
 import SignUpScreen from '../screens/signUp';
 import ForgotPwdScreen from '../screens/forgotPwd';
+import HomeScreen from '../screens/home';
+import FavouritesScreen from '../screens/favourites';
+import HistoryScreen from '../screens/history';
+import CartScreen from '../screens/cart';
+import AccountScreen from '../screens/account';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { COLORS } from '../constants/theme';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const authStack = createStackNavigator({
     signin: {
@@ -34,6 +42,83 @@ const authStack = createStackNavigator({
     },
 });
 
-const router = createAppContainer(authStack); // main stack will be created in next episodes;
+const homeStack = createStackNavigator({
+    home: {
+        screen: HomeScreen,
+    },
+    // home and details screen will be done in later episodes
+}, {
+    defaultNavigationOptions: {
+        headerStyle: {
+            backgroundColor: COLORS.primary,
+        },
+        headerTitle: 'Tasty', //app name
+        headerTitleStyle: {
+            color: COLORS.white,
+            fontWeight: '800',
+        }
+    }
+})
+
+const bottomStack = createBottomTabNavigator({
+    history: {
+        screen: HistoryScreen,
+        navigationOptions: {
+            tabBarLabel: 'History',
+            tabBarIcon: ({tintColor, focused}) => <Icon name='history' size={focused ? 30: 20} color={tintColor} />
+        }
+    },
+    cart: {
+        screen: CartScreen,
+        navigationOptions: {
+            tabBarLabel: 'Cart',
+            tabBarIcon: ({tintColor, focused}) => <Icon name='cart-outline' size={focused ? 30: 20} color={tintColor} />
+        }
+    },
+    home: {
+        screen: homeStack,
+        navigationOptions: {
+            tabBarLabel: 'Home',
+            tabBarIcon: ({tintColor, focused}) => <Icon name='home-outline' size={focused ? 30: 20} color={tintColor} />
+        }
+    },
+    favourite: {
+        screen: FavouritesScreen,
+        navigationOptions: {
+            tabBarLabel: 'Favourites',
+            tabBarIcon: ({tintColor, focused}) => <Icon name='heart-outline' size={focused ? 30: 20} color={tintColor} />
+        }
+    },
+    account: {
+        screen: AccountScreen,
+        navigationOptions: {
+            tabBarLabel: 'Account',
+            tabBarIcon: ({tintColor, focused}) => <Icon name='account-outline' size={focused ? 30: 20} color={tintColor} />
+        }
+    }
+},{
+    initialRouteName: 'home',
+    tabBarOptions: {
+        activeTintColor: COLORS.primary,
+        inactiveTintColor: COLORS.grey,
+        labelStyle: {
+            fontWeight: 'bold',
+        },
+    }
+})
+
+const mainStack = createSwitchNavigator({
+    auth: {
+        screen: authStack,
+        navigationOptions: {
+            headerShown: false,
+        }
+    },
+    main : {
+        screen: bottomStack,
+    }
+})
+
+const router = createAppContainer(mainStack); 
 
 export default router;
