@@ -46,13 +46,13 @@ const homeStack = createStackNavigator({
     home: {
         screen: HomeScreen,
     },
-    // home and details screen will be done in later episodes
 }, {
     defaultNavigationOptions: {
         headerStyle: {
             backgroundColor: COLORS.primary,
+            shadowOpacity: 0,
         },
-        headerTitle: 'Tasty', //app name
+        headerTitle: 'Find Best Restaurents',
         headerTitleStyle: {
             color: COLORS.white,
             fontWeight: '800',
