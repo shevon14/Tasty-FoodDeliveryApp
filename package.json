@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@jesster2k10/react-native-range-slider": "^0.3.1",
     "@react-native-async-storage/async-storage": "^1.16.1",
     "@react-native-community/masked-view": "^0.1.11",
     "react": "17.0.2",
@@ -21,6 +22,7 @@
     "react-native-screens": "^3.13.1",
     "react-native-vector-icons": "^9.1.0",
     "react-navigation": "^4.4.4",
+    "react-navigation-drawer": "^2.7.2",
     "react-navigation-stack": "^2.10.4",
     "react-navigation-tabs": "^2.11.2"
   },

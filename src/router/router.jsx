@@ -7,11 +7,14 @@ import FavouritesScreen from '../screens/favourites';
 import HistoryScreen from '../screens/history';
 import CartScreen from '../screens/cart';
 import AccountScreen from '../screens/account';
+import Drawer from '../components/drawer';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
-import { COLORS } from '../constants/theme';
+import { COLORS, SIZES } from '../constants/theme';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon2 from 'react-native-vector-icons/Ionicons';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 
 const authStack = createStackNavigator({
     signin: {
@@ -47,7 +50,7 @@ const homeStack = createStackNavigator({
         screen: HomeScreen,
     },
 }, {
-    defaultNavigationOptions: {
+    defaultNavigationOptions: ({navigation}) => ({
         headerStyle: {
             backgroundColor: COLORS.primary,
             shadowOpacity: 0,
@@ -56,8 +59,15 @@ const homeStack = createStackNavigator({
         headerTitleStyle: {
             color: COLORS.white,
             fontWeight: '800',
-        }
-    }
+        },
+        headerRight: (
+            <Icon2 name="options-sharp"
+                size={30} color={COLORS.white}
+                style={{paddingRight: 10}}
+                onPress={() => { navigation.openDrawer() }}
+            />
+        ),
+    }),
 })
 
 const bottomStack = createBottomTabNavigator({
@@ -105,6 +115,16 @@ const bottomStack = createBottomTabNavigator({
             fontWeight: 'bold',
         },
     }
+});
+
+const drawerStack = createDrawerNavigator({
+    drawer: {
+        screen: bottomStack,
+    },
+}, {
+    contentComponent: Drawer,
+    drawerPosition: 'right',
+    drawerWidth: SIZES.width - 60
 })
 
 const mainStack = createSwitchNavigator({
@@ -115,7 +135,7 @@ const mainStack = createSwitchNavigator({
         }
     },
     main : {
-        screen: bottomStack,
+        screen: drawerStack,
     }
 })
 
