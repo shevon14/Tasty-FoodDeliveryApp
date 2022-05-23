@@ -6,7 +6,7 @@ import { COLORS } from '../../constants/theme';
 import Restaurent from "../../components/restaurent";
 import DATA from "../../data/data.json";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
 
     // filter by price type
     const filterData = (price) => (DATA.restaurents).filter((result) => result.price === price );
@@ -19,9 +19,9 @@ const HomeScreen = () => {
                 </View>
             </View>
             <ScrollView>
-                <Restaurent title="Cost Effective" data={filterData('$')} />
-                <Restaurent title="Bit Pricer" data={filterData('$$')} />
-                <Restaurent title="Big Spender" data={filterData('$$$')} />
+                <Restaurent title="Cost Effective" data={filterData('$')} navigation={navigation} />
+                <Restaurent title="Bit Pricer" data={filterData('$$')} navigation={navigation} />
+                <Restaurent title="Big Spender" data={filterData('$$$')} navigation={navigation} />
                 <View style={{ height: 80 }}/>
             </ScrollView>
         </View>

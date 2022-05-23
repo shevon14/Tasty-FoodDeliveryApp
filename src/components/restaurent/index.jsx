@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, FlatList, Image } from "react-native";
 import Rating from "../rating";
 import styles from "./styles";
 
-const Restaurent = ({title, data}) => {
+const Restaurent = ({title, data, navigation}) => {
     return(
         <View style={styles.container}>
             <View style={styles.row}>
@@ -18,7 +18,9 @@ const Restaurent = ({title, data}) => {
                 showsHorizontalScrollIndicator={false}
                 renderItem={({item}) => {
                     return(
-                        <View style={styles.item}>
+                        <TouchableOpacity style={styles.item} onPress={() => {
+                            navigation.navigate('restaurent');
+                        }}>
                             <View>
                                 <Image source={{uri: item.image_url}} style={styles.image} resizeMode="cover" />
                             </View>
@@ -28,7 +30,7 @@ const Restaurent = ({title, data}) => {
                                 <Rating count={item.rating} />
                                 <Text style={styles.address}>({item.review_count} reviews)</Text>
                             </View>    
-                        </View>
+                        </TouchableOpacity>
                     )
                 }}
             />

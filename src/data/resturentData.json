@@ -1,0 +1,112 @@
+{
+    "id": "v1DHGRNCH9247WLYoaoA9A",
+    "alias": "l-industrie-pizzeria-brooklyn",
+    "name": "L'industrie Pizzeria",
+    "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/_tHRJGBaVtQD4L-hFK9jjw/o.jpg",
+    "is_claimed": true,
+    "is_closed": false,
+    "url": "https://www.yelp.com/biz/l-industrie-pizzeria-brooklyn?adjust_creative=W1dNi6Ziy5O0z-dk2LOQow&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=W1dNi6Ziy5O0z-dk2LOQow",
+    "phone": "+17185990002",
+    "display_phone": "(718) 599-0002",
+    "review_count": 686,
+    "categories": [
+        {
+            "alias": "pizza",
+            "title": "Pizza"
+        }
+    ],
+    "rating": 4.5,
+    "location": {
+        "address1": "254 S 2nd St",
+        "address2": "",
+        "address3": "",
+        "city": "Brooklyn",
+        "zip_code": "11211",
+        "country": "US",
+        "state": "NY",
+        "display_address": [
+            "254 S 2nd St",
+            "Brooklyn, NY 11211"
+        ],
+        "cross_streets": "Roebling St & Havemeyer St"
+    },
+    "coordinates": {
+        "latitude": 40.71162,
+        "longitude": -73.95783
+    },
+    "photos": [
+        "https://s3-media2.fl.yelpcdn.com/bphoto/_tHRJGBaVtQD4L-hFK9jjw/o.jpg",
+        "https://s3-media1.fl.yelpcdn.com/bphoto/Ks048aTIrGkXAgzFQecREg/o.jpg",
+        "https://s3-media3.fl.yelpcdn.com/bphoto/Llq71WxE8MzpOodJoa6-kg/o.jpg"
+    ],
+    "price": "$",
+    "hours": [
+        {
+            "open": [
+                {
+                    "is_overnight": false,
+                    "start": "1600",
+                    "end": "2200",
+                    "day": 0
+                },
+                {
+                    "is_overnight": false,
+                    "start": "1600",
+                    "end": "2200",
+                    "day": 1
+                },
+                {
+                    "is_overnight": false,
+                    "start": "1600",
+                    "end": "2200",
+                    "day": 2
+                },
+                {
+                    "is_overnight": false,
+                    "start": "1600",
+                    "end": "2200",
+                    "day": 3
+                },
+                {
+                    "is_overnight": false,
+                    "start": "1600",
+                    "end": "2200",
+                    "day": 4
+                },
+                {
+                    "is_overnight": false,
+                    "start": "0800",
+                    "end": "1000",
+                    "day": 5
+                },
+                {
+                    "is_overnight": false,
+                    "start": "1600",
+                    "end": "2200",
+                    "day": 5
+                },
+                {
+                    "is_overnight": false,
+                    "start": "0800",
+                    "end": "1000",
+                    "day": 6
+                },
+                {
+                    "is_overnight": false,
+                    "start": "1600",
+                    "end": "2200",
+                    "day": 6
+                }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+        }
+    ],
+    "transactions": [
+        "delivery"
+    ],
+    "messaging": {
+        "url": "https://www.yelp.com/raq/v1DHGRNCH9247WLYoaoA9A?adjust_creative=W1dNi6Ziy5O0z-dk2LOQow&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=W1dNi6Ziy5O0z-dk2LOQow#popup%3Araq",
+        "use_case_text": "Message the Business"
+    }
+}
